@@ -3,9 +3,7 @@ package tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
-import org.json.JSONException;
 import org.junit.jupiter.api.Test;
 
 import cse237.FileParser;
