@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class ScraperTests {
+class ParserTests {
 
 	@Test
 	void test() {
