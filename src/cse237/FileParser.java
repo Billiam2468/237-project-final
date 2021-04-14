@@ -86,6 +86,78 @@ public class FileParser {
 		return stateData;
 	}
 	
+	public int getVaccinations() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			int a = actuals.get("vaccinesAdministered").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
+	public int getDeaths() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			int a = actuals.get("deaths").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
+	public int getPositiveTests() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			int a = actuals.get("positiveTests").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
+	public int getNegativeTests() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			int a = actuals.get("negativeTests").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
+	public int getContactTracers() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			int a = actuals.get("contactTracers").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
+	public int getHospitalBedsCapacity() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			JsonObject hospitalBeds = actuals.get("hospitalBeds").getAsJsonObject();
+			int a = hospitalBeds.get("capacity").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
+	public int getCurrentUsageTotal() {
+		if(this.dataType.equals("state")) {
+			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+			JsonObject hospitalBeds = actuals.get("hospitalBeds").getAsJsonObject();
+			int a = hospitalBeds.get("currentUsageTotal").getAsInt();
+			return a;
+		}
+		return -1;
+	}
+	
 	public static void main(String args[]) throws IOException {
 		FileParser dataFile = new FileParser("state", "WA");
 		System.out.println("Output when printing all data is:");
@@ -93,5 +165,6 @@ public class FileParser {
 		System.out.println("Output when just printing specific data:");
 		dataFile.getData();
 	}
+	
 	
 }
