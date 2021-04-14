@@ -17,4 +17,5 @@ Implemented but doesnt work:
 Commands needed to compile:
 
 javac -cp gson-2.8.6.jar FileParser.java
+
 java -cp gson-2.8.6.jar FileParser.java
