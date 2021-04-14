@@ -130,18 +130,21 @@ public class Run {
 		if(USSelect == 1) {
 			
 			System.out.println("Total US Covid Cases:");
+			//Display api data here
 			System.out.println("---Not Implemented Yet---");
 			
 		}
 		else if(USSelect == 2) {
 			
 			System.out.println("Total US Covid Deaths:");
+			//Display api data here
 			System.out.println("---Not Implemented Yet---");
 			
 		}
 		else if(USSelect == 3) {
 			
 			System.out.println("Total US Covid Vaccinations:");
+			//Display api data here
 			System.out.println("---Not Implemented Yet---");
 			
 		}
@@ -159,18 +162,21 @@ public class Run {
 		if(stateSelect == 1) {
 			
 			System.out.println("Total " + stateMenu.getName() + " Covid Cases:");
+			//Display api data here
 			System.out.println("---Not Implemented Yet---");
 			
 		}
 		else if(stateSelect == 2) {
 			
 			System.out.println("Total " + stateMenu.getName() + " Covid Deaths:");
+			//Display api data here
 			System.out.println("---Not Implemented Yet---");
 			
 		}
 		else if(stateSelect == 3) {
 			
 			System.out.println("Total " + stateMenu.getName() + " Covid Vaccinations:");
+			//Display api data here
 			System.out.println("---Not Implemented Yet---");
 			
 		}
