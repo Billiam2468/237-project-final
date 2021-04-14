@@ -17,6 +17,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonArray;
 
+//Test comment
+
 public class FileParser {
 	
 	private String dataType; //Is either "state" or "us", depending on whether you are grabbing singular state or US data
