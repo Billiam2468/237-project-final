@@ -11,7 +11,7 @@ import java.util.Arrays;
 //import org.json.JSONException;
 //import org.json.JSONObject;
 
-//Google's Json Parser
+//Google's Json Parserc	
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -21,8 +21,8 @@ import com.google.gson.JsonArray;
 
 public class FileParser {
 	
-	private String dataType; //Is either "state" or "us", depending on whether you are grabbing singular state or US data
-	private JsonArray jsonFile; //The JsonArray that is returned by the API
+	private static String dataType; //Is either "state" or "us", depending on whether you are grabbing singular state or US data
+	private static JsonArray jsonFile; //The JsonArray that is returned by the API
 	
 	public FileParser(String dataType, String state) throws IOException {
 		//Set class variable to the type of data we are getting
@@ -66,14 +66,14 @@ public class FileParser {
 	
 	//Prints contents of JsonArray
 	public void printData() {
-		System.out.println(this.jsonFile.toString());
+		System.out.println(jsonFile.toString());
 	}
 	
 	//Get specific data in array form
 	public int[] getData() {
 		int stateData[] = new int[3]; //Data stored as: [vaccinations administered, cases, deaths]
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
+		if(dataType.equals("state")) {
+			JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
 			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
 			int vaccinations = actuals.get("vaccinesAdministered").getAsInt();
 			int cases = actuals.get("cases").getAsInt();
@@ -86,76 +86,68 @@ public class FileParser {
 		return stateData;
 	}
 	
-	public int getVaccinations() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			int a = actuals.get("vaccinesAdministered").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getPopulation() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		int pop = stateJson.get("population").getAsInt();
+		return pop;
 	}
 	
-	public int getDeaths() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			int a = actuals.get("deaths").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getVaccinations() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		return actuals.get("vaccinesAdministered").getAsInt();
 	}
 	
-	public int getPositiveTests() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			int a = actuals.get("positiveTests").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getDeaths() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		return actuals.get("deaths").getAsInt();
 	}
 	
-	public int getNegativeTests() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			int a = actuals.get("negativeTests").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getPositiveTests() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		return actuals.get("positiveTests").getAsInt();
 	}
 	
-	public int getContactTracers() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			int a = actuals.get("contactTracers").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getNegativeTests() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		return actuals.get("negativeTests").getAsInt();
 	}
 	
-	public int getHospitalBedsCapacity() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			JsonObject hospitalBeds = actuals.get("hospitalBeds").getAsJsonObject();
-			int a = hospitalBeds.get("capacity").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getContactTracers() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		return actuals.get("contactTracers").getAsInt();
 	}
 	
-	public int getCurrentUsageTotal() {
-		if(this.dataType.equals("state")) {
-			JsonObject stateJson = this.jsonFile.get(0).getAsJsonObject();
-			JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
-			JsonObject hospitalBeds = actuals.get("hospitalBeds").getAsJsonObject();
-			int a = hospitalBeds.get("currentUsageTotal").getAsInt();
-			return a;
-		}
-		return -1;
+	public static int getHospitalBedsCapacity() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		JsonObject hospitalBeds = actuals.get("hospitalBeds").getAsJsonObject();
+		return hospitalBeds.get("capacity").getAsInt();
+	}
+	
+	public static int getCurrentUsageTotal() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		JsonObject hospitalBeds = actuals.get("hospitalBeds").getAsJsonObject();
+		return hospitalBeds.get("currentUsageTotal").getAsInt();
+	}
+	
+	public static int getVaxDistributed() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		int distributed = actuals.get("vaccinesDistributed").getAsInt();
+		return distributed;
+	}
+	
+	public static int getVaxAdministered() {
+		JsonObject stateJson = jsonFile.get(0).getAsJsonObject();
+		JsonObject actuals = stateJson.get("actuals").getAsJsonObject();
+		int administered = actuals.get("vaccinesAdministered").getAsInt();
+		return administered;
 	}
 	
 	public static void main(String args[]) throws IOException {
@@ -164,6 +156,12 @@ public class FileParser {
 		dataFile.printData();
 		System.out.println("Output when just printing specific data:");
 		dataFile.getData();
+		System.out.println(getDeaths());
+		System.out.println(getHospitalBedsCapacity());
+		System.out.println(getPopulation());
+		System.out.println(getVaxAdministered());
+		System.out.println(getVaxDistributed());
+		
 	}
 	
 	
