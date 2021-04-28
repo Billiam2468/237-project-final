@@ -31,7 +31,7 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
 
 
 ### Implemented but doesnt work:
-/t  -Working on UI (user input to specify states)
+  -Working on UI (user input to specify states)
 
   -Not all statistics we want have been implemented (more percentages and ratios)
 
