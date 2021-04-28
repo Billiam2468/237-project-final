@@ -7,6 +7,8 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 import cse237.FileParser;
+import cse237.Menu;
+import cse237.Run;
 
 class ParserTests {
 
@@ -152,6 +154,128 @@ class ParserTests {
 			validNum = true;
 		}
 		assertTrue(validNum);
+	}
+	
+	@Test
+	//This tests whether the proper main menu output is printed
+	void testCorrectMainMenu() {
+		Run run = new Run();
+		run.makeMenus();
+		Menu mainMenu = run.getMenus().get("main");
+		String[] msg = mainMenu.storeMessage();
+		for(int i = 0; i < msg.length; i++) {
+			System.out.println(msg[i]);
+		}
+		boolean validMainMenu = true;
+		if(!msg[0].equals(" * ---------------------------------- * ")) {
+			System.out.println("0 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[1].equals("|                                      |")) {
+			System.out.println("1 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[2].equals("|    Welcome to the COVID Dashboard    |")) {
+			System.out.println("2 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[3].equals("|                                      |")) {
+			System.out.println("3 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[4].equals(" * ---------------------------------- * ")) {
+			System.out.println("4 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[5].equals("Please select an option from the following menu:")) {
+			System.out.println("5 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[6].equals("1. US Covid Stats")) {
+			System.out.println("6 was trigerred");
+		}
+		if(!msg[7].equals("2. State-specific Covid Stats")) {
+			System.out.println("7 was triggered");
+			validMainMenu = false;
+		}
+		if(!msg[8].equals("3. Exit")) {
+			System.out.println("8 was triggered");
+			validMainMenu = false;
+		}
+		assertTrue(validMainMenu);
+	}
+	
+	@Test
+	//This test whether the correct US Menu output is being printed
+	void testCorrectUSMenu() {
+		Run run = new Run();
+		run.makeMenus();
+		Menu usMenu = run.getMenus().get("US");
+		String[] msg = usMenu.storeMessage();
+		boolean validUSMenu = true;
+		if(!msg[0].equals("*    US Covid Statistics   *")) {
+			System.out.println("0 was triggered");
+			validUSMenu = false;
+		}
+		if(!msg[1].equals("Please select an option from the following menu of US Covid stats:")) {
+			System.out.println("1 was triggered");
+			validUSMenu = false;
+		}
+		if(!msg[2].equals("1. Cases by state")) {
+			System.out.println("2 was triggered");
+			validUSMenu = false;
+		}
+		if(!msg[3].equals("2. Deaths by state")) {
+			System.out.println("3 was triggered");
+			validUSMenu = false;
+		}
+		if(!msg[4].equals("3. Vaccinations by state")) {
+			System.out.println("4 was triggered");
+			validUSMenu = false;
+		}
+		if(!msg[5].equals("4. Conglomerate US Data")) {
+			System.out.println("5 was triggered");
+			validUSMenu = false;
+		}
+		if(!msg[6].equals("5. Back")) {
+			System.out.println("6 was trigerred");
+		}
+		assertTrue(validUSMenu);		
+	}
+	
+	@Test
+	//This tests whether the correct State Menu output is being printed
+	void testCorrectStateMenu() {
+		Run run = new Run();
+		run.makeMenus();
+		Menu stateMenu = run.getMenus().get("TN");
+		String[] msg = stateMenu.storeMessage();
+		boolean validStateMenu = true;
+		if(!msg[0].equals("*    TN Covid Statistics   *")) {
+			System.out.println("0 was triggered");
+			validStateMenu = false;
+		}
+		if(!msg[1].equals("Please select an option from the following menu of State Covid stats:")) {
+			System.out.println("1 was triggered");
+			validStateMenu = false;
+		}
+		if(!msg[2].equals("1. Cases")) {
+			System.out.println("2 was triggered");
+			validStateMenu = false;
+		}
+		if(!msg[3].equals("2. Deaths")) {
+			System.out.println("3 was triggered");
+			validStateMenu = false;
+		}
+		if(!msg[4].equals("3. Vaccinations")) {
+			System.out.println("4 was triggered");
+			validStateMenu = false;
+		}
+		if(!msg[5].equals("4. Back")) {
+			System.out.println("5 was triggered");
+			validStateMenu = false;
+		}
+		assertTrue(validStateMenu);
 	}
 
 }
