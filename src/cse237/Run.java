@@ -88,7 +88,7 @@ public class Run {
 		stateMenuMessage.add("3. Vaccinations");
 		stateMenuMessage.add("4. Back");
 		for(String state : stateCheck.getStates()) {
-			System.out.println(state + " state is being added");
+			//System.out.println(state + " state is being added");
 			stateMenuMessage.set(0, "*    " + state + " Covid Statistics   *");
 			Menu StateMenu = new Menu(state, 4, stateMenuMessage);
 			menus.put(state, StateMenu);

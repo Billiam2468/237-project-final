@@ -12,6 +12,8 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
   -The user can continue to navigate data via a menu 
 
   -The user is reprompted if an invalid input was recieved
+  
+  -Allow users to navigate backwards in command line menu navigation
 
 
 ### User stories to complete next iteration:
@@ -22,8 +24,6 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
 
   -Compiling US data (add up all the states)
 
-  -Allow users to navigate backwards in command line menu navigation
-
   -Print out us data in menu navigation Run class
 
   -Enable graphing of data to compare states (for all types of statistics)
@@ -31,7 +31,6 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
 
 
 ### Implemented but doesnt work:
-  -Working on UI (user input to specify states)
 
   -Not all statistics we want have been implemented (more percentages and ratios)
 
@@ -39,13 +38,6 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
 
 ### Commands needed to compile:
 
-  javac -cp gson-2.8.6.jar FileParser.java
-
-  java -cp gson-2.8.6.jar FileParser.java
-
-
-Side note:
-
-Since a lot of work was done on UI, there were not many tests other than the statistics we grabbed.
+Run the run.sh script file in the src folder. Not the one in the cse237 folder
 
 
