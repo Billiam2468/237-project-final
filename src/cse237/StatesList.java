@@ -43,7 +43,7 @@ public class StatesList {
 		states.add("NY");
 		states.add("NC");
 		states.add("ND");
-		states.add("OH"); //Check OHIO
+		states.add("OH"); 
 		states.add("OK");
 		states.add("OR");
 		states.add("PA");
