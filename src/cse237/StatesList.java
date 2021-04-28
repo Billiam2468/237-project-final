@@ -24,7 +24,7 @@ public class StatesList {
 		states.add("IL");
 		states.add("IN");
 		states.add("IA");
-		states.add("PUT KANSAS HERE");
+		states.add("KS");
 		states.add("KY");
 		states.add("LA");
 		states.add("ME");
@@ -43,7 +43,7 @@ public class StatesList {
 		states.add("NY");
 		states.add("NC");
 		states.add("ND");
-		states.add("OH"); //Check OHIO
+		states.add("OH"); 
 		states.add("OK");
 		states.add("OR");
 		states.add("PA");

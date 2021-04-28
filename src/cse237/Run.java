@@ -138,15 +138,18 @@ public class Run {
 		
 		if(USSelect == 1) {
 			System.out.println("Total US Covid Cases By State:");
+			System.out.println("-----------------");
+			System.out.println("| State|  Cases |");
+			System.out.println("-----------------");
 			//Display api data here in a neat table that displays state with the cases in a column next to it
 			//Would probably look something like this:
-			//----------------
-			//|State | Cases |
+			//
+			//
 			//----------------
 			//|  AL  | 124124|
 			//|--------------|
 			//|  AK  | 125125|
-			//|--------------|
+			//
 			// ...
 			//etc. etc. until you get through all the states. This is just an idea for formatting though so feel free to do whatever is easiest
 			//The for loop below will enable you to iterate through all of the states by using the string as a key for the stateData HashMap made above
@@ -154,16 +157,24 @@ public class Run {
 			//cases, and deaths at [0], [1], [2] respectively
 			//The process for all of the ones below should be the same other than the conglomerate data
 			for(String state : stateCheck.getStates()) {
-
+				//check
+				System.out.println("   " + state + "  |" +  stateData.get(state)[0] + " ");
+				System.out.println("|---------------|");
 			}
-			System.out.println("---Not Implemented Yet---");
 			
 		}
 		else if(USSelect == 2) {
 			
 			System.out.println("Total US Covid Deaths:");
 			//Display api data here in a neat table that displays state with the deaths in a column next to it
-			System.out.println("---Not Implemented Yet---");
+			System.out.println("-----------------");
+			System.out.println("| State| Deaths |");
+			System.out.println("-----------------");
+			for(String state : stateCheck.getStates()) {
+				//check
+				System.out.println("   " + state + "  |" +  stateData.get(state)[1] + " ");
+				System.out.println("|---------------|");
+			}
 			
 		}
 		
@@ -171,21 +182,26 @@ public class Run {
 			
 			System.out.println("Total US Covid Vaccinations:");
 			//Display api data here in a neat table that displays state with the vaccinations in a column next to it
-			System.out.println("---Not Implemented Yet---");
+			System.out.println("-----------------");
+			System.out.println("| State|  Vaxn's |");
+			System.out.println("-----------------");
+			for(String state : stateCheck.getStates()) {
+				//check
+				System.out.println("   " + state + "  |" +  stateData.get(state)[2] + " ");
+				System.out.println("|---------------|");
+			}
 			
 		}
 		else if(USSelect == 4) {
-			System.out.println("Conglomerate US Covid Statistics");
-			//Display total cases, deaths, and vaccinations total by all the states combined.
-			//Top row would include cases, deaths, and vaccinations, bottom row would include the total values
-			//Would look something like this:
-			// ---------------------------
-			// |Cases|Deaths|Vaccinations|
-			// ---------------------------
-			// |124125|15512|   12412    |
-			// ----------------------------
-			//If you want, might be easier to put the cases, deaths, and vaccinations all in one column so that the length of the number
-			//won't really mess up the formatting like how the ones above are. All up to you.
+			System.out.println("Conglomerate US Covid Statistics\n");
+			final Object[] header = new Object[]{"State", "Cases", "Deaths", "Vaxn's"};
+			System.out.format("%15s%15s%15s%15s%n", header);
+			System.out.println("          --------------------------------------------------");
+			for(String state : stateCheck.getStates()) {
+				//check
+				final Object[] row = new Object[] {state, stateData.get(state)[0], stateData.get(state)[1], stateData.get(state)[2]};
+				System.out.format("%15s%15s%15s%15s%n", row);
+			}
 		}
 		
 		else {
@@ -207,7 +223,7 @@ public class Run {
 			//----------------------
 			//|Cases| 1241241241241|
 			//----------------------
-			System.out.println("---Not Implemented Yet---");
+			System.out.println(stateMenu.getName());
 			
 		}
 		else if(stateSelect == 2) {
@@ -232,5 +248,4 @@ public class Run {
 		}
 		
 	}
-	
 }
