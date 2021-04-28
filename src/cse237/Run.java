@@ -31,10 +31,13 @@ public class Run {
 		mainMenu.displayMessage();
 		int mainSelect = mainMenu.getInput();
 		this.mainMenuProcess(mainSelect);
-		
+	}
+	
+	public Map<String, Menu> getMenus() {
+		return this.menus;
 	}
 
-	private void makeMenus() {
+	public void makeMenus() {
 		
 		this.makeMainMenu();
 		

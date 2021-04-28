@@ -81,7 +81,8 @@ public class FileParser {
 			stateData[0] = vaccinations;
 			stateData[1] = cases;
 			stateData[2] = deaths;
-			System.out.println(Arrays.toString(stateData));
+			//System.out.println(Arrays.toString(stateData));
+			System.out.println("Grabbing state data...");
 		}
 		return stateData;
 	}
