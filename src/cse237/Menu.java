@@ -22,6 +22,15 @@ public class Menu {
 			System.out.println(message.get(i));
 		}
 	}
+	
+	public String[] storeMessage() {
+		String[] storedMessage = new String[this.message.size()];
+		for(int i = 0; i < this.message.size(); ++i) {
+			storedMessage[i] = message.get(i);
+		}
+		return storedMessage;
+	}
+	
 	public int getInput() {
 		int selected = keyBoardIn.nextInt();
 		//Need to include section to check for non number input. If input is letter program crashes
