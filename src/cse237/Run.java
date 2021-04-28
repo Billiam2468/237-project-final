@@ -80,16 +80,15 @@ public class Run {
 	}
 	
 	private void makeStateMenus() {
-		List<String> stateMenuMessage = new ArrayList<String>();
-		stateMenuMessage.add("*    State Covid Statistics   *");
-		stateMenuMessage.add("Please select an option from the following menu of State Covid stats:");
-		stateMenuMessage.add("1. Cases");
-		stateMenuMessage.add("2. Deaths");
-		stateMenuMessage.add("3. Vaccinations");
-		stateMenuMessage.add("4. Back");
 		for(String state : stateCheck.getStates()) {
 			//System.out.println(state + " state is being added");
-			stateMenuMessage.set(0, "*    " + state + " Covid Statistics   *");
+			List<String> stateMenuMessage = new ArrayList<String>();
+			stateMenuMessage.add("*    " + state + " Covid Statistics   *");
+			stateMenuMessage.add("Please select an option from the following menu of State Covid stats:");
+			stateMenuMessage.add("1. Cases");
+			stateMenuMessage.add("2. Deaths");
+			stateMenuMessage.add("3. Vaccinations");
+			stateMenuMessage.add("4. Back");
 			Menu StateMenu = new Menu(state, 4, stateMenuMessage);
 			menus.put(state, StateMenu);
 		}
