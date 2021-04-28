@@ -213,38 +213,36 @@ public class Run {
 		
 	}
 	
-	private void stateMenuProcess(Menu stateMenu, int stateSelect) {
-		
+	private void stateMenuProcess(Menu stateMenu, int stateSelect) throws IOException {
+		System.out.println("selected: " + stateSelect);
+		//grab the data for the specific state
+		FileParser chosenState = new FileParser("state", stateMenu.getName());
+		int[] stateArray = chosenState.getData();
 		if(stateSelect == 1) {
-			System.out.println("selected: " + USSelect);
 			//Creating a hashmap for all of the states that each references an array that holds covid vax, cases, deaths (in that order) for each state
-			Map<String, int[]> stateData = new HashMap<String, int[]>();
-			for(String state : stateCheck.getStates()) {
-				FileParser currentState = new FileParser("state", state);
-				int[] stateArray = currentState.getData();
-				stateData.put(state, stateArray);
-			}
-			System.out.println("Total " + stateMenu.getName() + " Covid Cases:");
+			System.out.println(" -------------------------------");
+			System.out.print("| Total " + stateMenu.getName() + " Covid Cases: ");
 			//Display api data here. Simple text output in a neat table should suffice
-			//e.g.
-			//----------------------
-			//|Cases| 1241241241241|
-			//----------------------
-			System.out.println(stateData.get(stateMenu.getName())[0]);
+			System.out.println(stateArray[0]+" |");
+			System.out.println(" -------------------------------");
 			
 		}
 		else if(stateSelect == 2) {
 			
-			System.out.println("Total " + stateMenu.getName() + " Covid Deaths:");
-			//Display api data here. Simple text output in a neat table should suffice. Pretty much identical to one above
-			System.out.println("---Not Implemented Yet---");
+			System.out.println(" -------------------------------");
+			System.out.print("| Total " + stateMenu.getName() + " Covid Deaths: ");
+			//Display api data here. Simple text output in a neat table should suffice
+			System.out.println(stateArray[1]+" |");
+			System.out.println(" -------------------------------");
 			
 		}
 		else if(stateSelect == 3) {
 			
-			System.out.println("Total " + stateMenu.getName() + " Covid Vaccinations:");
-			//Display api data here. Simple text output in a neat table should suffice. Pretty much identical to one two above
-			System.out.println("---Not Implemented Yet---");
+			System.out.println(" -----------------------------------");
+			System.out.print("| Total " + stateMenu.getName() + " Covid Vaccinations: ");
+			//Display api data here. Simple text output in a neat table should suffice
+			System.out.println(stateArray[2]+" |");
+			System.out.println(" -----------------------------------");
 			
 		}
 		else {
