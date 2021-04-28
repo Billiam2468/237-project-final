@@ -24,6 +24,7 @@ public class Menu {
 	}
 	public int getInput() {
 		int selected = keyBoardIn.nextInt();
+		//Need to include section to check for non number input. If input is letter program crashes
 		while(selected < 1 || selected > this.getOptions()) {
 			System.out.println("Please enter a valid option:");
 			selected = keyBoardIn.nextInt();
