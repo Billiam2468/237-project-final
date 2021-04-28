@@ -1,7 +1,7 @@
 # 237 Final Project: COVID-19 Dashboard
 Our project allows the user to quickly obtain real-time US COVID-19 data for all 50 states, such as the number of cases, deaths, and vaccinations, all from the command line. The user can also look up data for a specific state.
 
-# User stories completed:
+### User stories completed:
 
 -The user can view US and state JSON data from the covidactnow.org API from the terminal
 
@@ -14,7 +14,7 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
 -The user is reprompted if an invalid input was recieved
 
 
-# User stories to complete next iteration:
+### User stories to complete next iteration:
 
 -Grabbing more data points to be used
 
@@ -30,14 +30,14 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
 
 
 
-# Implemented but doesnt work:
+### Implemented but doesnt work:
 -Working on UI (user input to specify states)
 
 -Not all statistics we want have been implemented (more percentages and ratios)
 
 
 
-# Commands needed to compile:
+### Commands needed to compile:
 
 javac -cp gson-2.8.6.jar FileParser.java
 
