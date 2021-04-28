@@ -231,7 +231,7 @@ public class Run {
 			
 			System.out.println(" -------------------------------");
 			System.out.print("| Total " + stateMenu.getName() + " Covid Deaths: ");
-			//Display api data here. Simple text output in a neat table should suffice
+			//Display api data here
 			System.out.println(stateArray[1]+" |");
 			System.out.println(" -------------------------------");
 			
@@ -240,7 +240,7 @@ public class Run {
 			
 			System.out.println(" -----------------------------------");
 			System.out.print("| Total " + stateMenu.getName() + " Covid Vaccinations: ");
-			//Display api data here. Simple text output in a neat table should suffice
+			//Display api data here
 			System.out.println(stateArray[2]+" |");
 			System.out.println(" -----------------------------------");
 			
