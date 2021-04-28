@@ -1,26 +1,20 @@
-# 237-project-final
-User stories completed:
+# 237 Final Project: COVID-19 Dashboard
+Our project allows the user to quickly obtain real-time US COVID-19 data for all 50 states, such as the number of cases, deaths, and vaccinations, all from the command line. The user can also look up data for a specific state.
+
+# User stories completed:
+
+-The user can view US and state JSON data from the covidactnow.org API from the terminal
+
+-The user can search for cases, deaths, and vaccinations for a specific state
+
+-The user can display data for all states in a table for cases, deaths, vaccinations, and all three at once
+
+-The user can continue to navigate data via a menu 
+
+-The user is reprompted if an invalid input was recieved
 
 
--Grabbing US and state JSON data from the covidactnow.org API
-
--Grabbing specific data points from the state json files
-
--Printing out entire data set received
-
--Implement menu navigation on command line
-
--Some values and statistics are properly obtained
-
--Tests for making sure this grabbing of data is functional were written
-
-
-
-
-
-User stories to complete next iteration:
-
--Scrubbing user input
+# User stories to complete next iteration:
 
 -Grabbing more data points to be used
 
@@ -32,22 +26,18 @@ User stories to complete next iteration:
 
 -Print out us data in menu navigation Run class
 
--Print out state data in menu navigation Run class
-
 -Enable graphing of data to compare states (for all types of statistics)
 
 
 
-Implemented but doesnt work:
+# Implemented but doesnt work:
 -Working on UI (user input to specify states)
 
 -Not all statistics we want have been implemented (more percentages and ratios)
 
 
 
-
-
-Commands needed to compile:
+# Commands needed to compile:
 
 javac -cp gson-2.8.6.jar FileParser.java
 
@@ -57,3 +47,5 @@ java -cp gson-2.8.6.jar FileParser.java
 Side note:
 
 Since a lot of work was done on UI, there were not many tests other than the statistics we grabbed.
+
+
