@@ -24,7 +24,7 @@ public class StatesList {
 		states.add("IL");
 		states.add("IN");
 		states.add("IA");
-		states.add("PUT KANSAS HERE");
+		states.add("KS");
 		states.add("KY");
 		states.add("LA");
 		states.add("ME");

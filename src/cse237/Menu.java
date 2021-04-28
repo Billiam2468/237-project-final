@@ -32,11 +32,28 @@ public class Menu {
 	}
 	
 	public int getInput() {
-		int selected = keyBoardIn.nextInt();
+		//Checking string is int from: https://stackoverflow.com/questions/5439529/determine-if-a-string-is-an-integer-in-java
+		boolean isNotInt = true;
+		String line = keyBoardIn.nextLine();
+		int selected = 0;
+		try{
+		    selected = Integer.parseInt(line);
+		    isNotInt = false;
+		} catch (NumberFormatException e) {
+			isNotInt = true;
+		}
+
 		//Need to include section to check for non number input. If input is letter program crashes
-		while(selected < 1 || selected > this.getOptions()) {
+		
+		while((selected < 1 || selected > this.getOptions()) && isNotInt) {
 			System.out.println("Please enter a valid option:");
-			selected = keyBoardIn.nextInt();
+			line = keyBoardIn.nextLine();
+			try{
+			  selected = Integer.parseInt(line);
+			  isNotInt = false;
+			} catch (NumberFormatException e) {
+			  isNotInt = true;
+			}
 		}
 		return selected;
 	}
