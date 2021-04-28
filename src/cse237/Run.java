@@ -216,14 +216,21 @@ public class Run {
 	private void stateMenuProcess(Menu stateMenu, int stateSelect) {
 		
 		if(stateSelect == 1) {
-			
+			System.out.println("selected: " + USSelect);
+			//Creating a hashmap for all of the states that each references an array that holds covid vax, cases, deaths (in that order) for each state
+			Map<String, int[]> stateData = new HashMap<String, int[]>();
+			for(String state : stateCheck.getStates()) {
+				FileParser currentState = new FileParser("state", state);
+				int[] stateArray = currentState.getData();
+				stateData.put(state, stateArray);
+			}
 			System.out.println("Total " + stateMenu.getName() + " Covid Cases:");
 			//Display api data here. Simple text output in a neat table should suffice
 			//e.g.
 			//----------------------
 			//|Cases| 1241241241241|
 			//----------------------
-			System.out.println(stateMenu.getName());
+			System.out.println(stateData.get(stateMenu.getName())[0]);
 			
 		}
 		else if(stateSelect == 2) {
