@@ -14,21 +14,7 @@ Our project allows the user to quickly obtain real-time US COVID-19 data for all
   -The user is reprompted if an invalid input was recieved
   
   -Allow users to navigate backwards in command line menu navigation
-
-
-### User stories to complete next iteration:
-
-  -Grabbing more data points to be used
-
-  -Calculating statistics from grabbed data points
-
-  -Compiling US data (add up all the states)
-
-  -Print out us data in menu navigation Run class
-
-  -Enable graphing of data to compare states (for all types of statistics)
-
-
+  
 
 ### Implemented but doesnt work:
 
