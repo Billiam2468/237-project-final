@@ -222,7 +222,7 @@ public class Run {
 			//Creating a hashmap for all of the states that each references an array that holds covid vax, cases, deaths (in that order) for each state
 			System.out.println(" -------------------------------");
 			System.out.print("| Total " + stateMenu.getName() + " Covid Cases: ");
-			//Display api data here. Simple text output in a neat table should suffice
+			//Display api data here
 			System.out.println(stateArray[0]+" |");
 			System.out.println(" -------------------------------");
 			
